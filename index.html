@@ -1,0 +1,498 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Eficaz</title>
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="css/blue.css" rel="stylesheet" type="text/css" media="all" />
+<!----font-Awesome----->
+   	<link rel="stylesheet" href="fonts/css/font-awesome.min.css">
+<!----font-Awesome----->
+<!-- start plugins -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!--start slider -->
+    <link rel="stylesheet" href="css/fwslider.css" media="all">
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/css3-mediaqueries.js"></script>
+    <script src="js/fwslider.js"></script>
+<!--end slider -->
+<!-- must have -->
+<link href="css/allinone_carousel.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+<script src="js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+<script src="js/allinone_carousel.js" type="text/javascript"></script>
+<!--[if IE]><script src="js/excanvas.compiled.js" type="text/javascript"></script><![endif]-->
+<!-- must have -->
+	<script>
+		jQuery(function() {
+
+			jQuery('#allinone_carousel_charming').allinone_carousel({
+				skin: 'charming',
+				width: 990,
+				height: 454,
+				responsive:true,
+				autoPlay: 3,
+				resizeImages:true,
+				autoHideBottomNav:false,
+				showElementTitle:false,
+				verticalAdjustment:50,
+				showPreviewThumbs:false,
+				//easing:'easeOutBounce',
+				numberOfVisibleItems:5,
+				nextPrevMarginTop:23,
+				playMovieMarginTop:0,
+				bottomNavMarginBottom:-10
+			});		
+		});
+	</script>
+<!-- Owl Carousel Assets -->
+<link href="css/owl.carousel.css" rel="stylesheet">
+<script src="js/owl.carousel.js"></script>
+		<script>
+			$(document).ready(function() {
+
+				$("#owl-demo").owlCarousel({
+					items : 4,
+					lazyLoad : true,
+					autoPlay : true,
+					navigation : true,
+					navigationText : ["", ""],
+					rewindNav : false,
+					scrollPerPage : false,
+					pagination : false,
+					paginationNumbers : false,
+				});
+
+			});
+		</script>
+		<!-- //Owl Carousel Assets -->
+<!-- start circle -->
+<script>
+(function($){
+	$.fn.percentPie = function(options){
+
+		var settings = $.extend({
+			width: 100,
+			trackColor: "EEEEEE",
+			barColor: "E2534B",
+			barWeight: 30,
+			startPercent: 0,
+			endPercent: 1,
+			fps: 60
+		}, options);
+
+		this.css({
+			width: settings.width,
+			height: settings.width
+		});
+
+		var	that = this,
+			hoverPolice = false,
+			canvasWidth = settings.width,
+			canvasHeight = canvasWidth,
+			id = $('canvas').length,
+			canvasElement = $('<canvas id="'+ id +'" width="' + canvasWidth + '" height="' + canvasHeight + '"></canvas>'),
+			canvas = canvasElement.get(0).getContext("2d"),
+			centerX = canvasWidth/2,
+			centerY = canvasHeight/2,
+			radius = settings.width/2 - settings.barWeight/2;
+			counterClockwise = false,
+			fps = 1000 / settings.fps,
+			update = .01;
+			this.angle = settings.startPercent;
+
+		this.drawArc = function(startAngle, percentFilled, color){
+			var drawingArc = true;
+			canvas.beginPath();
+			canvas.arc(centerX, centerY, radius, (Math.PI/180)*(startAngle * 360 - 90), (Math.PI/180)*(percentFilled * 360 - 90), counterClockwise);
+			canvas.strokeStyle = color;
+			canvas.lineWidth = settings.barWeight;
+			canvas.stroke();
+			drawingArc = false;
+		}
+
+		this.fillChart = function(stop){
+			var loop = setInterval(function(){
+				hoverPolice = true;
+				canvas.clearRect(0, 0, canvasWidth, canvasHeight);
+
+				that.drawArc(0, 360, settings.trackColor);
+				that.angle += update;
+				that.drawArc(settings.startPercent, that.angle, settings.barColor);
+
+				if(that.angle > stop){
+					clearInterval(loop);
+					hoverPolice = false;
+				}
+			}, fps);
+		}
+
+		this.mouseover(function(){
+			if(hoverPolice == false){
+				that.angle = settings.startPercent;
+				that.fillChart(settings.endPercent);
+			}
+		});
+
+		this.fillChart(settings.endPercent);
+		this.append(canvasElement);
+		return this;
+	}
+}(jQuery));
+
+$(document).ready(function() {
+
+	$('.google').percentPie({
+		width: 100,
+		trackColor: "E2534B",
+		barColor: "76C7C0",
+		barWeight: 20,
+		endPercent: .9,
+		fps: 60
+	});
+  
+  $('.moz').percentPie({
+		width: 100,
+		trackColor: "E2534B",
+		barColor: "76C7C0",
+		barWeight: 20,
+		endPercent: .75,
+		fps: 60
+	});
+  
+  $('.safari').percentPie({
+		width: 100,
+		trackColor: "E2534B",
+		barColor: "#332d49",
+		barWeight: 20,
+		endPercent: .5,
+		fps: 60
+	});
+    
+});
+</script>
+</head>
+<body>
+<div class="footer1_bg" style="background: #332d49; height: 60px;"><!-- start footer1 -->
+<div class="container">
+	<div class="footer1">
+		<div class="copy pull-left">
+			<p class="link"><span>Tudo o que você precisa saber sobre saúde e Segurança do Trabalho</span></p>
+		</div>
+		<div class="soc_icons pull-right">
+			<ul class="list-unstyled text-center">
+				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+				<li><a href="#"><i class="fa fa-rss"></i></a></li>
+			</ul>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+</div>
+<div class="header_bg" style="background: #ffffff; height: 100px;">
+<div class="container">
+	<div class="header">
+		<div class="logo">
+			<a href="index.html"><img src="images/logo.png" alt=""/ height="90px" style="margin-top: -20%;"></a>
+		</div>
+		<div class="h_menu">
+		<a id="touch-menu" class="mobile-menu" href="#">Menu</a>
+		<nav>
+		<ul class="menu list-unstyled">
+			<li class="activate"><a href="index.html">Inicio</a></li>
+			<li><a href="sobre.html">Sobre Nós</a></li>
+			<li><a href="#">eSocial</a></li>
+			<li><a href="#">Serviços</a>
+			<ul class="sub-menu list-unstyled">
+				<li><a href="#">Saúde do Trabalho</a></li>
+				<li><a href="#">Segurança do Trabalho</a></li>
+			
+			</ul>
+			</li>
+			<li><a href="contact.html">Contato</a></li>
+		</ul>
+		</nav>
+		<script src="js/menu.js" type="text/javascript"></script>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+</div>
+    <div id="fwslider"><!-- start slider -->
+        <div class="slider_container">
+            <div class="slide"> 
+                <!-- Slide image -->
+                    <img src="images/slider1.jpg">
+                <!-- /Slide image -->
+                <!-- Texts container -->
+                <div class="slide_content">
+                    <div class="slide_content_wrap">
+                        <!-- Text title -->
+                        <h4 class="title">Visão diferente do que existe atualmente no mercado</h4>
+                        <!-- /Text title -->
+                        <!-- Text description -->
+                        <p class="description">Oferecemos a nossos clientes uma assessoria completa em Medicina e Segurança do Trabalho</p>
+                        <!-- /Text description -->
+                    </div>
+                </div>
+                 <!-- /Texts container -->
+            </div>
+            <!-- /Duplicate to create more slides -->
+            <div class="slide">
+                <img src="images/slider2.jpg">
+                <div class="slide_content">
+                    <div class="slide_content_wrap">
+                        <h4 class="title">Promover o bem estar e melhores condições</h4>
+                        <p class="description">Prevenindo de potenciais prejuízos que possam causar danos à saúde dos trabalhadores</p>
+                    </div>
+                </div>
+            </div>
+            <!--/slide -->
+        </div>
+        <div class="timers"></div>
+        <div class="slidePrev"><span></span></div>
+        <div class="slideNext"><span></span></div>
+    </div><!--/slider -->
+<div class="main_bg"><!-- start main --><br><br><br>
+<div class="main_btm"><!-- start main_btm -->
+<div class="container">
+	<div class="main span_of_3">
+		<div class="col-md-3 span1_of_3">
+			<h4>Porque a Eficaz?</h4>
+			<ul class="list-unstyled nav_list">
+				<li><h5>Atendimento em todo território nacional.</h5></li>
+		<li><h5>Gestão de absenteísmo e de afastamentos previdenciários.</h5></li>
+				<li><h5>Certificação de Implantação das Normas Regulamentadoras, Assessoria Jurídica e Perícias, entre outros.</h5></li>
+	<li><h5>Gestão eSocial</h5></li>
+			<li><h5>Atendimento médico, de fonoaudiologia e laboratorial “in loco” para maior comodidade e redução do tempo de ausência do trabalhador no posto de trabalho.</h5></li>
+		
+			</ul>
+		</div>	<hr size="100px" width="1" align="left" color="#000000">
+		<div class="col-md-6 span1_of_3">
+			<h5>A <span>Eficaz</span> tem como foco, trazer um serviço diferenciado por seu atendimento, pois conta com uma equipe altamente treinada para melhor atender seus clientes com rapidez, eficiência e eficácia. 
+</h5>
+				<!-- start circle --><br/>
+					<h5>A busca permanente de excelência dos padrões de atendimento e dos serviços prestados é o objetivo central que vem habilitando a Eficaz como referência no mercado, fazendo com que a sua marca seja reconhecida como sinônimo de qualidade prestando serviços de Medicina e Segurança do Trabalho, implantando o Sistemas de Gestão da Segurança Ocupacional (ISO 9001, ISO 14001, OHSAS 18001), Análise Ergonômica, Avaliação dos Riscos Ocupacionais, Exames Médicos Ocupacionais ( Admissional, Demissional, Periódico, Mudança de Função, Retorno ao Trabalho), Exames Complementares (Audiometria, Radiológico, Avaliação Oftalmológica e outros), realizamos também palestras e treinamentos tais como: Higienização, Ergonomia, NRs entre outros.
+ </h5>
+		
+			
+	
+					
+				
+				<!-- end circle -->
+		</div>	
+
+		<div class="col-md-3 span1_of_3">
+	
+	
+			<img src="images/esocial.png" height="420px" width="350px">	
+
+		
+			
+		</div>
+		<div class="clearfix"></div>
+		<div class="container">
+	<div class="main_grid">
+		
+		<div class="span_of_4"><!-- start span_of_4 -->
+			<div class="col-md-3 span1_of_4">
+				<div class="span4_of_list">
+					
+					<h3>Medicina do Trabalho</h3>
+					<p>A proposta da Eficaz é prestar assessoria empresarial na implantação e manutenção dos Programas de Medicina Ocupacional, com eficiência e ética.</p>
+					<div class="read_more">
+						<a class="btn btn-2 active" href="#" style="background: rgba(255, 41, 41, 0.78);">Saiba Mais</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 span1_of_4">
+				<div class="span4_of_list">
+					
+					<h3>Segurança do Trabalho</h3>
+					<p>Garantimos a qualidade de vida dos trabalhadores por meio de treinamentos e palestras sobre prevenção de acidentes e minimização de riscos no ambiente.</p>
+					<div class="read_more">
+						<a class="btn  btn-2b" href="#" style="background: rgba(255, 41, 41, 0.78);">Saiba Mais</a>
+					</div>	
+				</div>	
+			</div>
+			<div class="col-md-3 span1_of_4">
+				<div class="span4_of_list">
+				
+					<h3>E-Social</h3>
+					<p>O eSocial é um projeto do Governo Federal, que envolve a Receita Federal, o Ministério do Trabalho, o INSS e a Caixa Econômica Federal.</p>
+					<div class="read_more">
+						<a class="btn btn-2b" href="#" style="background: rgba(255, 41, 41, 0.78);">Saiba Mais</a>
+					</div>		
+				</div>F
+			</div>
+			<div class="col-md-3 span1_of_4">
+				<div class="span4_of_list">
+			
+					<h3>Consultoria</h3>
+					<p>Prestamos suporte através de estudo e diagnóstico para implantação das melhores práticas e soluções referentes à segurança</p>
+					<div class="read_more">
+						<a class="btn btn-2b" href="#" style="background: rgba(255, 41, 41, 0.78);">Saiba Mais</a>
+					</div>						
+				</div>
+			</div>
+
+			<div class="clearfix"></div>
+
+		</div><!-- end span_of_4 -->
+	
+	</div>
+</div>
+	</div>
+	<div class="cau_hide">
+	<div class="cursual"><!--  start cursual  -->
+		<h4>Nossos Clientes<span class="line"></span></h4>
+	</div>
+	<div id="owl-demo" class="owl-carousel"><!----start-img-cursual---->
+		<div class="item">
+			<div class="cau_left">
+				<img class="lazyOwl" data-src="images/c1.png" alt="Lazy Owl Image">
+			</div>
+		</div>
+		<div class="item">
+			<div class="cau_left">
+				<img class="lazyOwl" data-src="images/c2.png" alt="Lazy Owl Image">
+			</div>
+		</div>
+		<div class="item">
+			<div class="cau_left">
+				<img class="lazyOwl" data-src="images/c3.png" alt="Lazy Owl Image">
+			</div>
+		</div>
+		<div class="item">
+			<div class="cau_left">
+				<img class="lazyOwl" data-src="images/c4.png" alt="Lazy Owl Image">
+			</div>
+		</div>
+		<div class="item">
+			<div class="cau_left">
+				<img class="lazyOwl" data-src="images/C5.png" alt="Lazy Owl Image">
+			</div>
+		</div>
+		<div class="item">
+			<div class="cau_left">
+				<img class="lazyOwl" data-src="images/c6.png" alt="Lazy Owl Image">
+			</div>
+		</div>
+		<div class="item">
+			<div class="cau_left">
+				<img class="lazyOwl" data-src="images/c7.png" alt="Lazy Owl Image">
+			</div>
+		</div>	
+		<div class="item">
+			<div class="cau_left">
+				<img class="lazyOwl" data-src="images/c8.png" alt="Lazy Owl Image">
+			</div>
+		</div>	
+		<div class="item">
+			<div class="cau_left">
+				<img class="lazyOwl" data-src="images/c9.png" alt="Lazy Owl Image">
+			</div>
+		</div>
+		<div class="item">
+			<div class="cau_left">
+				<img class="lazyOwl" data-src="images/c10.png" alt="Lazy Owl Image">
+			</div>
+		</div>		
+		
+	</div><!----//End-img-cursual---->
+	</div>
+</div>
+</div>
+
+</div>
+<div class="main1_bg"><!-- start main1 -->
+<div class="container">
+	<div class="main slider_text texxt-center">
+		<h4>Nossa Estrutura</h4>
+		<p>Atendendo em todo território nacional através de clínica própria e credenciadas, além de unidade móvel para atendimentos na sede de sua empresa, levando maior conforto e facilidades.</p>
+</div>
+</div>
+<!-- start banner -->
+<div id="bannerBg">
+<div id="containingDiv">
+            <div id="allinone_carousel_charming">
+            	<div class="myloader"></div>
+                <!-- CONTENT -->
+                <ul class="allinone_carousel_list">
+               		<li><img src="images/slider_pic1.jpg" alt="" class="img-responsive"/></li>
+                    <li><img src="images/slider_pic2.jpg" alt="" class="img-responsive"/></li>
+                    <li><img src="images/slider_pic3.jpg" alt="" class="img-responsive"/></li>
+                    <li><img src="images/slider_pic4.jpg" alt="" class="img-responsive"/></li>
+                    <li><img src="images/slider_pic5.jpg" alt="" class="img-responsive"/></li>
+                    <li><img src="images/slider_pic3.jpg" alt="" class="img-responsive"/></li>
+                    <li><img src="images/slider_pic4.jpg" alt="" class="img-responsive"/></li>
+                    <li><img src="images/slider_pic5.jpg" alt="" class="img-responsive"/></li>
+                      
+                </ul>    
+          </div>
+</div>
+</div>
+ <!-- end banner -->
+</div>
+
+<div class="footer_bg"><!-- start footer -->
+<div class="container">
+	<div class="footer">
+		<div class="col-md-4 footer1_of_3">
+				
+			<p class="f_para">Atender com qualidade e humanidade, promovendo soluções integradas em Medicina e Segurança do Trabalho, Clínica Médica, gerando qualidade de vida e segurança para nossos clientes</p>
+	
+		</div>
+	
+
+		<div class="col-md-4 footer_of_3">
+			<div class="blog_list">
+				<div class="col-md-3 f_pic">
+					<a href="#"><img src="images/blog_pic1.jpg" alt="" class="img-responsive"/></a>	
+				</div>
+				<div class="col-md-9 f_text">
+					<a href="http://portal.esocial.gov.br/"><p>Tudo que sua empresa precisa saber sobre eSocial.</p></a>
+			
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="blog_list">
+				<div class="col-md-3 f_pic">
+					<a href="#"><img src="images/blog_pic2.jpg" alt="" class="img-responsive"/></a>
+				</div>
+				<div class="col-md-9 f_text">
+					<a href="http://www.guiatrabalhista.com.br/legislacao/nrs.htm"><p>Guia trabalhista sobre segurança do trabalho.</p></a>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div><div class="col-md-4 footer1_of_3">
+				
+			<p class="f_para">Centro Administrativo – Rio de Janeiro<br>
+Praça Tiradentes, 10, 32ª andar, 3201<br>
+</p>
+			<p>Telefone:&nbsp;(21)2604-5586 / (21) 2723-4722<br>
+			Email: eficaz@eficaz.com.br
+</p>
+			
+		</div>
+		<div class="clearfix"></div>
+
+	</div>
+</div>
+</div>
+
+</body>
+</html>
